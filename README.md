@@ -9,4 +9,4 @@ Este curso ha sido divido en dos secciones:
 - Fundamentos de ROS
 - ROS Aplicado
 
-Para el correcto seguimiento del curso, se necesitan de ciertas herramientas y dependencias que son es especificadas en [REQUERIMIENTOS.md](Requerimientos).
+Para el correcto seguimiento del curso, se necesitan de ciertas herramientas y dependencias que son es especificadas en [REQUERIMIENTOS](REQUERIMIENTOS.md).
