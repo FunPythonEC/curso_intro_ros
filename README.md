@@ -10,3 +10,5 @@ Este curso ha sido divido en dos secciones:
 - ROS Aplicado
 
 Para el correcto seguimiento del curso, se necesitan de ciertas herramientas y dependencias que son es especificadas en [REQUERIMIENTOS](REQUERIMIENTOS.md).
+
+Una vez que se haya instalado todo el software necesario y se cumpla con los requerimientos, se puede proseguir con la sesión de fundamentos de ROS.
