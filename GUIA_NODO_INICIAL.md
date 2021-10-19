@@ -131,5 +131,22 @@ Para comprobar el funcionamiento se puede realizar de la misma manera que con el
 Usando el siguiente código:
 
 ```python
+#!/usr/bin/env python3
 
+import rospy
+from std_msgs.msg import String
+
+rospy.init_node('mix_node', anonymous=True)
+pub = rospy.Publisher('mix_message', String, queue_size=10)
+def callback(data):
+    msg = String()
+    msg.data = data.data+"mix"
+    pub.publish(msg)
+
+rospy.Subscriber("chatter", String, callback)
+
+rate = rospy.Rate(10)
+while not rospy.is_shutdown():
+    pub.publish(hello_str)
+    rate.sleep()
 ```
