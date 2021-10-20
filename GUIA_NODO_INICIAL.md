@@ -62,6 +62,12 @@ if __name__ == '__main__':
         pass
 ```
 
+Antes de correr cualquier comando de ROS, se necesita tener al ROS Master ejecutando en una terminal con:
+
+```bash
+roscore
+```
+
 Para correr el publicador se puede realizar a través de la ejecución del siguiente comando en una terminal:
 
 ```bash
