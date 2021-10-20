@@ -150,3 +150,9 @@ while not rospy.is_shutdown():
     pub.publish(hello_str)
     rate.sleep()
 ```
+
+## Y ahora que?
+
+Con los nodos ya definidos, se vuelve tedioso tener que abrir una terminal por cada uno de estos, para eso se hace uso de archivos `.launch`.
+
+El siguiente paso, es [Cómo usar archivos `.launch`](ARCHIVOS_LAUNCH.md).
