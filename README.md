@@ -11,4 +11,6 @@ Este curso ha sido divido en dos secciones:
 
 Para el correcto seguimiento del curso, se necesitan de ciertas herramientas y dependencias que son es especificadas en [REQUERIMIENTOS](REQUERIMIENTOS.md).
 
+Por otro lado, a través de todo el taller se usaran comando de terminal especificos, tanto para Linux y ROS, para ello aqui se encuentra un [cheat sheet de ROS](https://kapeli.com/cheat_sheets/ROS.docset/Contents/Resources/Documents/index) y un [cheat sheet de Linux](https://www.guru99.com/linux-commands-cheat-sheet.html).
+
 Una vez que se haya instalado todo el software necesario y se cumpla con los requerimientos, se puede proseguir con la sesión de fundamentos de ROS.
