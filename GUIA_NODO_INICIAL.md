@@ -16,11 +16,16 @@ catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python3
 
 Para poder acceder a todo lo respecto a los paquetes del espacio de trabajo, ejecutar `source devel/setup.bash` dentro del espacio de trabajo cada vez que se abra una nueva terminal.
 
+Si no se desea tener que correr el ultimo comando cada vez que se abra una terminal, correr lo siguiente:
+
+```bash
+echo "source ~/curso_ros/devel/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+```
+
 ## Cómo generar un paquete en un espacio de trabajo
 
-Seguir la guía de [crear un paquete](http://wiki.ros.org/catkin/Tutorials/CreatingPackage)
-
-O ejecutar los siguientes comandos:
+Seguir la guía de [crear un paquete](http://wiki.ros.org/catkin/Tutorials/CreatingPackage) o ejecutar los siguientes comandos:
 
 ```bash
 cd ~/curso_ros/src
@@ -35,9 +40,11 @@ Casi todas de las acciones de ROS se pueden realizar tanto por terminal como por
 
 Seguir los siguientes pasos para crear un publicador con Python:
 
-1. Crear una carpeta llamada `scripts` dentro del espacios de trabajo `mi_primer_nodo`.
+1. Crear una carpeta llamada `scripts` dentro del paquete o la carpeta `mi_primer_nodo`.
 2. Crear un archivo llamado `mi_publicador.py` dentro de la carpeta `scripts`.
 3. Escribir el siguiente código en el archivo:
+
+**Para la creación de archivos se puede usar `touch` y `nano`. Dentro de una terminal que se encuentre en el directorio correspondiente, ejecutar `nano mi_publicador.py` para crear el archivo y editarlo. Para guardarlo usar `CTRL+O + Enter` y para cerrar `CTRL+X`.**
 
 ```python
 #!/usr/bin/env python3
@@ -62,11 +69,15 @@ if __name__ == '__main__':
         pass
 ```
 
+**Nota: Si se reciben errores sobre permisos, correr el siguiente comando en la terminal: `chmod +x <direccion_archivo_codigo>`. Este comando nos permite dar permisos de ejecución al código.**
+
 Antes de correr cualquier comando de ROS, se necesita tener al ROS Master ejecutando en una terminal con:
 
 ```bash
 roscore
 ```
+
+El comando de roscore solo debe ser ejecutado en una terminal a la vez.
 
 Para correr el publicador se puede realizar a través de la ejecución del siguiente comando en una terminal:
 
@@ -74,7 +85,7 @@ Para correr el publicador se puede realizar a través de la ejecución del sigui
 rosrun mi_primer_nodo mi_publicador.py
 ```
 
-**Nota: Si se reciben errores sobre permisos, correr el siguiente comando en la terminal: `chmod +x <archivo_codigo>`**
+**Nota: Si se reciben errores sobre permisos, correr el siguiente comando en la terminal: `chmod +x <direccion_archivo_codigo>`**
 
 ### Comprobar el funcionamiento
 
@@ -101,14 +112,14 @@ rostopic echo /chatter
 Se hace uso del siguiente comando:
 
 ```bash
-rostopic pub /chatter std_msgs/String "data: 'hola'"
+rostopic pub -r 10 /chatter std_msgs/String "data: 'hola'"
 ```
 
 ## Generando un subscriptor
 
 Para la generación del nodo subscriptor, crear un archivo `mi_subscriptor.py` en la carpeta `scripts`.
 
-Añadir el siguiente código:
+Añadir el siguiente código en `mi_subscriptor.py`:
 
 ```python
 #!/usr/bin/env python3
@@ -153,7 +164,6 @@ rospy.Subscriber("chatter", String, callback)
 
 rate = rospy.Rate(10)
 while not rospy.is_shutdown():
-    pub.publish(hello_str)
     rate.sleep()
 ```
 

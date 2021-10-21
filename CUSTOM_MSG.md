@@ -8,8 +8,8 @@ En este taller, no se llegará a generar servicios sin embargo pueden verlo en [
 
 Para un mensaje, se deben de seguir los siguientes pasos:
 
-1. Crear un directorio llamado `msg` dentro de el paquete.
-2. Dentro del directorio `msg`, crear un archivo `velocidad_llantas.msg`.
+1. Crear un directorio o carpeta llamado `msg` dentro de el paquete `mi_primer_nodo`.
+2. Dentro del directorio `msg`, crear un archivo `VelocidadLlantas.msg`.
 3. Dentro del archivo de mensaje agregar lo siguiente:
 
    ```yaml
@@ -49,7 +49,7 @@ Para un mensaje, se deben de seguir los siguientes pasos:
    ```xml
    add_message_files(
      FILES
-     velocidad_llantas.msg
+     VelocidadLlantas.msg
    )
    ```
 
@@ -62,17 +62,29 @@ Para un mensaje, se deben de seguir los siguientes pasos:
    )
    ```
 
-9. Ejecutar `catkin_make` en el ws.
+9. Ejecutar `catkin_make` en el directorio del espacio de trabajo principal `curso_ros`.
 
 ## Comprobar nuestro `msg`
 
 Para comprobar que se haya compilado de manera correcta, puede checkear con el siguiente comando:
 
-```shell
-rosmsg list | grep velocidades
+```bash
+rosmsg list | grep Velocidad
 ```
 
-Ahora a usar el mensaje, modificar uno de sus nodos publicadores para que lo use y envie los numeros a un topic, tener en cuenta que para asignar los valores se debe de realizar de la siguiente manera:
+Deberían obtener algo parecido a lo siguiente:
+
+![rosmsg_list](/media/rosmsg_list.png)
+
+Ahora a usar el mensaje, como reto, modificar uno de sus nodos publicadores para que lo use y envíe los números a un topic, tener en cuenta que para asignar los valores se debe de realizar de la siguiente manera:
+
+Para importar el mensaje desde Python:
+
+```python
+from mi_primer_nodo.mg import VelocidadLlantas
+```
+
+Y para asignar valores al mensaje:
 
 ```python
 vel_msg = VelocidadLlantas()
