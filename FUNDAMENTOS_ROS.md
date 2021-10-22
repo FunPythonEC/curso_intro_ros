@@ -102,4 +102,4 @@ Para ver el formato de un mensaje de usa: `rosmsg info <directorio_mensaje>`.
 
 # A crear un nodo!
 
-Para iniciar con la creación de un nodo **subscriptor** y **publicador** seguiremos la guía de [Cómo generar tu primer nodo](GUIA_NODO_INICIAL.md).
+Para iniciar con la creación de un nodo **subscriptor** y **publicador** seguiremos la guía de [Cómo generar tu primer nodo](./GUIA_NODO_INICIAL.md).
